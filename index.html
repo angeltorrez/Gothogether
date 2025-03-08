@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototipo GoTogether</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <icon src="./public/icon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+
+</head>
+<body>
+    <!-- Sección 1: Hero -->
+    <header class="hero container">
+        <nav>
+            <div class="logo"><img src="./public/logo.svg" alt="Logo de GoTogether"></div>
+            <ul class="nav-links">
+                <li><a href="#how-works">¿Como Funciona?</a></li>
+                <li><a href="#about">Nosotros</a></li>
+
+                <li><a href="#contact" class="btn-contact">¡Quiero una asesoria!</a></li>
+            </ul>
+        </nav>
+        <div class="hero-content">
+            <h1>No hay fórmulas mágicas,<br/> solo conocimiento y experiencia</h1>
+            <p><bold><u>Asesorias</u></bold> estategicas y legales con el respaldo<br/> de profesionales especializados.</p>
+            <a href="#how-works" class="btn-show">Saber Más</a>
+        </div>
+    </header>
+    <!-- Contenedor de la franja -->
+    <div class="color-stripe">
+      <img src="./public/separador.svg" alt="separador de página">
+    </div>
+    <!-- Sección 2: ¿Como Funciona? -->
+    <section id="how-works" class="container how-works">
+      <article class="info-video">
+        <video class="vls-explain" src="video.mp4">en que consiste la asesoria?</video>
+      </article>
+      <article class="texts-info">
+        <h2 >¿Como funciona?</h2>
+        
+        <div class="text-box">
+          <img src="./public/buble-icon.svg" class="iconos" alt="icono de burbuja de texto">
+          <div>
+            <h3>Paso 1</h3>
+            <p>Tenemos entrevistas previas gratis para entender dónde esta tu negocio hoy y hacia dónde querés ir. </p>
+          </div>
+        </div>
+        <div class="text-box">
+          <img src="./public/rocket.svg" alt="icono de cohete">
+          <div>
+            <h3>Paso 3</h3>
+            <p>Te enviamos material complementario así tenés a mano todo lo aprendido para cuando lo necesites.</p>
+          </div>
+        </div>
+        <div class="text-box">
+          <img src="./public/documents.svg" alt="icono de documentos">
+          <div>
+            <h3>Paso 2</h3>
+            <p>Asesoría de 60 min con un plan adaptado a tus recursos para optimizar tiempo y dinero.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+    <!-- Sección 3: Tipos de asesorías-->
+    <section id="about" class="container">
+      <header>
+        <h2 class="title-h2">Tipos de asesorías</h2>
+      </header>
+      <article class="cards-asesorias">
+          <div class="card-content">
+            <header><h3>Asesoria legal</h3><hr></header>
+            <div class="text-card-content">
+              <p>Puede ser de ayuda en tres posibles escenarios:</p>
+            </div>
+            <ul>
+              <li>Preventiva: evitar conflictos por falta de conocimiento en reglas y normas laborales o comerciales.</li>
+              <li>Intercambio de posiciones: en una relación comercial, laboral o humana surge un desacuerdo una parte expone sus razones y la otra plantea su petición para encontrar una solución justa.</li>
+              <li>Litigio judicial: si las partes no llegan a un acuerdo, el paso siguiente es el de la vía judicial, donde se presentan pruebas y se analizan los hechos en profundidad.</li>
+            </ul>
+            <div class="card-info">
+              <p>A cargo: Lucas da Cesare | Licenciado en Administración</p>
+              <a href="https://www.linkedin.com/" target="_blank"><img src="./public/linkedin-logo.svg" alt="logo de linkedin"></a>
+            </div>
+          </div>
+          <div class="card-content">
+            <header><h3>Asesoría estrategica</h3><hr></header>
+            <div class="text-card-content">
+              <p >Puede acompañar las etapas principales y secundarias de la cadena de valor de una empresa, cómo por ejemplo:</p>
+            </div>
+            <ul>
+              <li>Infraestructura de la empresa</li>
+              <li>Gestion de recursos humanos</li>
+              <li>Marketing y ventas</li>
+              <li>Logística de entrada y salida</li>
+              <li>Operaciones</li>
+              <li>Servicio</li>
+            </ul>
+            <div class="card-info">
+              <p>A cargo: Lucas da Cesare | Licenciado en Administración</p>
+              <a href="https://www.linkedin.com/" target="_blank"><img src="./public/linkedin-logo.svg" alt="logo de linkedin"></a>
+            </div>
+          </div>
+       </article>
+       <article class="services">
+        <div class="carrousel">
+          <ul class="carrousel-track">
+            <li>Estrategia Financiera</li>
+            <li>Asesoría en Recursos Humanos</li>
+            <li>Transformación Digital</li>
+            <li>Asesoría en Marketing</li>
+            <li>Transformación Digital</li>
+            <li>Transformación Digital</li>
+            <li>Transformación Digital</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+    <!-- Sección 4: sobre GoTogether -->
+    <section id="contact" class="contact container">
+      <article>
+        <header>
+          <h2>Lo que tenés que saber sobre<br/><bold>Go</bold>together</h2>
+        </header>
+        <div class="texts-info">
+          <h4>TEXTO SIMULADO</h4>
+          <p></p>
+          <p></p>
+          <p></p>
+        </div>
+      </article>
+      <article>
+        <div class="carrousel-video">
+          
+        </div>
+      </article>
+
+  </section>
+    <!-- Sección 4: Calendary -->
+    <section id="contact" class="contact container">
+        <h2>Contacto</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Nombre" required>
+            <input type="email" placeholder="Correo Electrónico" required>
+            <textarea placeholder="Mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Landing Page. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
