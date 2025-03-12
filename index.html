@@ -1,56 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prototipo GoTogether</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <icon src="./public/icon.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoTogether</title>
+  <link icon="./public/icon.ico" rel="icon">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/responsive.css">
 </head>
 <body>
-    <!-- Sección 1: Hero -->
-    <header class="hero container">
-        <nav>
-            <div class="logo"><img src="./public/logo.svg" alt="Logo de GoTogether"></div>
-            <ul class="nav-links">
-                <li><a href="#how-works">¿Como Funciona?</a></li>
-                <li><a href="#about">Nosotros</a></li>
-
-                <li><a href="#contact" class="btn-contact">¡Quiero una asesoria!</a></li>
-            </ul>
-        </nav>
-        <div class="hero-content">
-            <h1>No hay fórmulas mágicas,<br/> solo conocimiento y experiencia</h1>
-            <p><bold><u>Asesorias</u></bold> estategicas y legales con el respaldo<br/> de profesionales especializados.</p>
-            <a href="#how-works" class="btn-show">Saber Más</a>
-        </div>
-    </header>
-    <!-- Contenedor de la franja -->
-    <div class="color-stripe">
-      <img src="./public/separador.svg" alt="separador de página">
+  <header id="header">
+    <div id="logo"><img src="./public/logo.svg" alt="logo de GoTogether" srcset=""></div>
+    <div id="hamburger-menu">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-    <!-- Sección 2: ¿Como Funciona? -->
-    <section id="how-works" class="container how-works">
+    <nav id="nav">
+      <ul>
+        <li><a href="#how-works">¿Como Funciona?</a></li>
+        <li><a href="#about">Nosotros</a></li>
+        <li><a href="#contact" class="special-button">¡Quiero una asesoria!</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="container">
+    <section id="hero">
+      <h1>No hay fórmulas mágicas,<br/> solo conocimiento y experiencia</h1>
+      <p><strong><u>Asesorias</u></strong> estategicas y legales con el respaldo<br/> de profesionales especializados.</p>
+      <a href="#how-works" class="btn-show">Saber Más</a>
+    </section>
+    <div id="separator1">
+    </div>
+
+    <section id="how-works">
       <article class="info-video">
         <video class="vls-explain" src="video.mp4">en que consiste la asesoria?</video>
       </article>
       <article class="texts-info">
         <h2 >¿Como funciona?</h2>
-        
         <div class="text-box">
           <img src="./public/buble-icon.svg" class="iconos" alt="icono de burbuja de texto">
           <div>
             <h3>Paso 1</h3>
             <p>Tenemos entrevistas previas gratis para entender dónde esta tu negocio hoy y hacia dónde querés ir. </p>
-          </div>
-        </div>
-        <div class="text-box">
-          <img src="./public/rocket.svg" alt="icono de cohete">
-          <div>
-            <h3>Paso 3</h3>
-            <p>Te enviamos material complementario así tenés a mano todo lo aprendido para cuando lo necesites.</p>
           </div>
         </div>
         <div class="text-box">
@@ -60,10 +53,19 @@
             <p>Asesoría de 60 min con un plan adaptado a tus recursos para optimizar tiempo y dinero.</p>
           </div>
         </div>
+        <div class="text-box">
+          <img src="./public/rocket.svg" alt="icono de cohete">
+          <div>
+            <h3>Paso 3</h3>
+            <p>Te enviamos material complementario así tenés a mano todo lo aprendido para cuando lo necesites.</p>
+          </div>
+        </div>
       </article>
     </section>
-    <!-- Sección 3: Tipos de asesorías-->
-    <section id="about" class="container">
+    <div id="separator2">
+    </div>
+
+    <section id="asesorias">
       <header>
         <h2 class="title-h2">Tipos de asesorías</h2>
       </header>
@@ -105,53 +107,59 @@
        <article class="services">
         <div class="carrousel">
           <ul class="carrousel-track">
-            <li>Estrategia Financiera</li>
-            <li>Asesoría en Recursos Humanos</li>
-            <li>Transformación Digital</li>
-            <li>Asesoría en Marketing</li>
-            <li>Transformación Digital</li>
-            <li>Transformación Digital</li>
-            <li>Transformación Digital</li>
+            <li>Procesos de ventas</li>
+            <li>Procesos de ventas</li>
+            <li>Modelo de negocio</li>
+            <li>Plan de negocios</li>
+            <li>Gestión empresarial</li>
+            <li>Diseño de estrategias</li>
+            <li>Marketing y ventas</li>
+            <li>Derecho legal y comercial</li>
           </ul>
         </div>
       </article>
     </section>
-    <!-- Sección 4: sobre GoTogether -->
-    <section id="contact" class="contact container">
-      <article>
+    <div id="separator3">
+    </div>
+
+    <section id="about">
+      <article class="info-about">
         <header>
-          <h2>Lo que tenés que saber sobre<br/><bold>Go</bold>together</h2>
+          <h2>Lo que tenés que saber sobre<br/><strong>Go</strong>together</h2>
         </header>
         <div class="texts-info">
           <h4>TEXTO SIMULADO</h4>
-          <p></p>
-          <p></p>
-          <p></p>
+          <p>
+            Algo que tenés que saber desde el principio, es que eso que sentis que viene generando un problema ¡vamos a encontrar la solución!
+          </p>
+          <p>Estamos acá para ayudarte brindandote todas las herramientas y conocimientos que tenemos gracias a muchas personas que ya confiaron en nosotros.
+          </p>
+          <p>¡Te vemos en la entrevista!<br>Equipo GOtogether.
+          </p>
         </div>
       </article>
-      <article>
-        <div class="carrousel-video">
-          
+      <article class="carrousel-container">
+        <button class="nav-button prev">❮</button>
+        <div class="carrousel-videos">
+          <div class="item-video"><video src="./utils/video.mp4"></video></div>
+          <div class="item-video"><video src="./utils/video.mp4"></video></div>
+          <div class="item-video"><video src="./utils/video.mp4"></video></div>
+          <div class="item-video"><video src="./utils/video.mp4"></video></div>
+          <div class="item-video"><video src="./utils/video.mp4"></video></div>
         </div>
+        <button class="nav-button next">❯</button>
       </article>
-
-  </section>
-    <!-- Sección 4: Calendary -->
-    <section id="contact" class="contact container">
-        <h2>Contacto</h2>
-        <form id="contact-form">
-            <input type="text" placeholder="Nombre" required>
-            <input type="email" placeholder="Correo Electrónico" required>
-            <textarea placeholder="Mensaje" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
     </section>
+    <div id="separator4">
+    </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Landing Page. Todos los derechos reservados.</p>
-    </footer>
-
-    <script src="js/main.js"></script>
+    <section id="contact">
+      <h2>Section 5</h2>
+      <p>Content for section 5.</p>
+    </section>
+  <footer>
+  </footer>
+</main>
+  <script src="./js/main.js"></script>
 </body>
 </html>

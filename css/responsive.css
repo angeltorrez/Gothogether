@@ -1,1 +1,269 @@
-mediaqueries
+/* Estilos para el menú hamburguesa */
+#hamburger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+#hamburger-menu span {
+  height: 3px;
+  width: 25px;
+  background-color: #333;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+#hamburger-menu.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+#hamburger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+#hamburger-menu.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+}
+
+nav.active {
+  right: 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 20px 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px 15px;
+  transition: background-color 0.3s;
+}
+
+#logo img {
+  padding: 0px .5rem;
+  border-radius: 20px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#logo img:hover {
+  cursor: pointer;
+}
+
+nav ul li a:hover, #logo:active img {
+  background-color: #ddd;
+}
+
+nav ul li a.special-button {
+  background-color: #333;
+  color: #fff;
+  border-radius: 20px;
+}
+
+/* Estilos para móviles */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+    width: 100%; /* Asegurarse de que el body ocupe todo el ancho */
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  #header {
+    text-align: center;
+    display: grid;
+    grid-template-areas:
+      "logo hamburger-menu";
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    width: 100%; /* Asegurarse de que el header ocupe todo el ancho */
+  }
+  #hamburger-menu{
+    display: flex;
+  }
+
+  main {
+    padding: 10px;
+    padding-top: calc(80px + 20px); /* Ajustar según la altura del header */
+    display: grid;
+    grid-template-areas:
+      "hero"
+      "separator1"
+      "how-work"
+      "separator2"
+      "asesorias"
+      "separator3"
+      "about"
+      "separator4"
+      "contact";
+    grid-template-rows: auto auto auto auto auto auto auto auto auto;
+  }
+
+  section {
+    margin-bottom: 20px;
+  }
+
+  #separator1, #separator2, #separator3, #separator4 {
+    width: 80%;
+    background-color: tomato;
+    background-image: url("../public/separador-gradiente.svg");
+    height: 3px;
+  }
+
+  nav {
+    right: -250px;
+  }
+
+  nav.active {
+    right: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    margin: 2rem 0px;
+  }
+
+  nav ul li a {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+  }
+}
+
+/* Estilos para tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  #header {
+    text-align: left;
+    display: grid;
+    grid-template-areas: "logo nav";
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+
+  main {
+    padding: 15px;
+    padding-top: calc(80px + 20px); /* Ajustar según la altura del header */
+    display: grid;
+    grid-template-areas:
+      "hero"
+      "separator1"
+      "how-work"
+      "separator2"
+      "asesorias"
+      "separator3"
+      "about"
+      "separator4"
+      "contact";
+    grid-template-rows: auto auto auto auto auto auto auto auto auto;
+  }
+
+  section {
+    margin-bottom: 25px;
+  }
+
+  #separator1, #separator2, #separator3, #separator4 {
+    width: 90%;
+    background-color: tomato;
+    background-image: url("../public/separador-gradiente.svg");
+    height: 5px;
+  }
+}
+
+/* Estilos para PC */
+@media (min-width: 1025px) {
+  body {
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  main {
+    padding: 20px;
+    padding-top: calc(80px + 20px); /* Ajustar según la altura del header */
+    display: grid;
+    grid-template-areas:
+      "hero"
+      "separator1"
+      "how-work"
+      "separator2"
+      "asesorias"
+      "separator3"
+      "about"
+      "separator4"
+      "contact";
+    grid-template-rows: 1fr auto 1fr auto 1fr auto 1fr auto 1fr;
+  }
+
+  section {
+    margin-bottom: 30px;
+    height: 100vh;
+  }
+
+  #separator1, #separator2, #separator3, #separator4 {
+    background-color: tomato;
+    background-image: url("../public/separador.svg");
+    height: 1rem;
+    width: 100%;
+  }
+}
