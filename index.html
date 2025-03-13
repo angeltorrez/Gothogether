@@ -7,6 +7,8 @@
   <link icon="./public/icon.ico" rel="icon">
   <link rel="stylesheet" href="./css/main.css">
   <link rel="stylesheet" href="./css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Importar Font Awesome -->
+  <script src="./js/video-control.js" defer></script>
 </head>
 <body>
   <header id="header">
@@ -27,34 +29,48 @@
   <main class="container">
     <section id="hero">
       <h1>No hay fórmulas mágicas,<br/> solo conocimiento y experiencia</h1>
-      <p><strong><u>Asesorias</u></strong> estategicas y legales con el respaldo<br/> de profesionales especializados.</p>
+      <p><strong><u>Asesorias</u></strong> estategicas y lsegales con el respaldo<br/> de profesionales especializados.</p>
       <a href="#how-works" class="btn-show">Saber Más</a>
     </section>
     <div id="separator1">
     </div>
 
     <section id="how-works">
-      <article class="info-video">
-        <video class="vls-explain" src="video.mp4">en que consiste la asesoria?</video>
+      <article class="content-video-f">
+          <div class="video-funciona">
+              <video src="./utils/video.mp4"></video>
+              <div class="overlay"></div>
+              <h2>¿Qué es una asesoría?</h2>
+              <i class="fa fa-play play-pause-btn"></i> <!-- Botón de play/pause -->
+          </div>
       </article>
       <article class="texts-info">
         <h2 >¿Como funciona?</h2>
+        <hr class="hr-tittle"/>
         <div class="text-box">
-          <img src="./public/buble-icon.svg" class="iconos" alt="icono de burbuja de texto">
+          <div class="svg">
+            <img src="./public/buble-icon.svg" class="iconos" alt="icono de burbuja de texto">
+          </div>
           <div>
             <h3>Paso 1</h3>
             <p>Tenemos entrevistas previas gratis para entender dónde esta tu negocio hoy y hacia dónde querés ir. </p>
           </div>
         </div>
+        <hr>
         <div class="text-box">
-          <img src="./public/documents.svg" alt="icono de documentos">
+          <div class="svg">
+            <img src="./public/documents.svg" alt="icono de documentos">
+          </div>
           <div>
             <h3>Paso 2</h3>
             <p>Asesoría de 60 min con un plan adaptado a tus recursos para optimizar tiempo y dinero.</p>
           </div>
         </div>
+        <hr>
         <div class="text-box">
-          <img src="./public/rocket.svg" alt="icono de cohete">
+          <div class="svg">
+            <img src="./public/rocket.svg" alt="icono de cohete">
+          </div>
           <div>
             <h3>Paso 3</h3>
             <p>Te enviamos material complementario así tenés a mano todo lo aprendido para cuando lo necesites.</p>
@@ -75,7 +91,7 @@
             <div class="text-card-content">
               <p>Puede ser de ayuda en tres posibles escenarios:</p>
             </div>
-            <ul>
+            <ul class="extra-info">
               <li>Preventiva: evitar conflictos por falta de conocimiento en reglas y normas laborales o comerciales.</li>
               <li>Intercambio de posiciones: en una relación comercial, laboral o humana surge un desacuerdo una parte expone sus razones y la otra plantea su petición para encontrar una solución justa.</li>
               <li>Litigio judicial: si las partes no llegan a un acuerdo, el paso siguiente es el de la vía judicial, donde se presentan pruebas y se analizan los hechos en profundidad.</li>
@@ -90,7 +106,7 @@
             <div class="text-card-content">
               <p >Puede acompañar las etapas principales y secundarias de la cadena de valor de una empresa, cómo por ejemplo:</p>
             </div>
-            <ul>
+            <ul class="extra-info">
               <li>Infraestructura de la empresa</li>
               <li>Gestion de recursos humanos</li>
               <li>Marketing y ventas</li>

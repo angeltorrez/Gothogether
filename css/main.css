@@ -14,10 +14,12 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden; /* Evitar desbordamiento horizontal */
 }
 
 header, main, footer {
   padding: 20px;
+  overflow: hidden; /* Evitar desbordamiento */
 }
 
 /* Estilos para el nav */
@@ -34,6 +36,13 @@ header, main, footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden; /* Evitar desbordamiento */
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden; /* Evitar desbordamiento */
 }
 
 nav ul {
@@ -42,6 +51,7 @@ nav ul {
   gap: 20px;
   padding: 0;
   margin: 0;
+  overflow: hidden; /* Evitar desbordamiento */
 }
 
 nav ul li a {
@@ -71,6 +81,22 @@ nav ul li a.special-button {
   border-radius: 20px;
 }
 
+/* Estilo para las secciones */
+section {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  text-align: center;
+}
+
+#hero {
+  padding-top: 0; /* Evitar padding-top adicional en #hero */
+}
+
+#hero > a {
+  align-self: center;
+}
+
 /* Estilos comunes para botones, textos, etc. */
 .btn-show {
   display: inline-block;
@@ -80,14 +106,68 @@ nav ul li a.special-button {
   text-decoration: none;
   border-radius: 5px;
   margin-top: 20px;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .btn-show:hover {
   background-color: #555;
+  transform: scale(1.05);
 }
 
-.info-video {
+.content-video-f {
+  position: relative;
   margin-bottom: 20px;
+  width: 100%; /* Asegurar que el video ocupe todo el ancho */
+  max-width: 600px; /* Limitar el ancho máximo */
+}
+
+.content-video-f .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.content-video-f:hover .overlay {
+  opacity: 1;
+}
+
+.content-video-f .overlay h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+}
+
+.content-video-f .overlay .play-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.content-video-f .overlay .play-button:hover {
+  background-color: #555;
+}
+
+.hr-tittle {
+  height: 4px;
+  width: 100%;
+  border: none;
+  margin: 10px 0;
+  background-color: #000;
 }
 
 .texts-info {
@@ -98,14 +178,71 @@ nav ul li a.special-button {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  gap: 10px; /* Añadir gap para alinear correctamente */
 }
 
 .text-box img {
-  margin-right: 10px;
+  width: 100%; /* Ajustar el tamaño del SVG */
+  height: 100%; /* Ajustar el tamaño del SVG */
+}
+
+.svg {
+  width: 70px; /* Ajustar el tamaño del contenedor */
+  height: 70px; /* Ajustar el tamaño del contenedor */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card-content {
   margin-bottom: 20px;
+  padding: 10px; /* Añadir padding */
+  overflow: hidden; /* Evitar desbordamiento */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  transition: box-shadow 0.3s, transform 0.5s, height 0.5s;
+}
+
+.card-content:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.02);
+  height: auto; /* Estirar la card para mostrar card-info */
+}
+
+.card-content .card-info {
+  display: none;
+}
+
+.card-content:hover .card-info {
+  display: flex;
+}
+
+.extra-info li {
+  line-height: 1.2rem;
+  text-align: left;
+}
+
+.cards-asesorias {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (min-width: 1025px) {
+  .cards-asesorias {
+    flex-direction: row;
+  }
+
+  .card-content {
+    flex: 1;
+    margin-bottom: 0;
+    transition: box-shadow 0.3s, height 0.3s;
+  }
+
+  .card-content:hover {
+    transform: none;
+    height: auto; /* Estirar la card para mostrar card-info */
+  }
 }
 
 .card-info {
@@ -115,17 +252,79 @@ nav ul li a.special-button {
 }
 
 .carrousel {
-  overflow-x: scroll;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10px; /* Añadir padding */
+  width: 100vw; /* Ocupa todo el ancho de la pantalla */
+  position: relative;
 }
 
 .carrousel-track {
-  display: flex;
-  gap: 10px;
+  display: inline-flex;
+  animation: scroll-left 40s linear infinite; /* Ajustar la velocidad de la animación */
 }
 
-.carrousel-container {
+.carrousel-track li {
+  display: inline-block;
+  padding: 0 10px;
+  min-width: 100vw; /* Cada item ocupa todo el ancho de la pantalla */
+}
+.video-funciona {
+  position: relative;
+  width: 400px;
+  height: 500px;
+  overflow: hidden;
+}
+.video-funciona video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.video-funciona h2 {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  color: #000;
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  z-index: 2;
+  transition: opacity 0.3s ease-in-out;
+}
+.video-funciona .play-pause-btn {
   display: flex;
   align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 2;
+  transition: opacity 0.3s ease-in-out;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@media (min-width: 1025px) {
+  .carrousel-track {
+    animation: scroll-left 60s linear infinite; /* Ajustar la velocidad de la animación para PC */
+  }
 }
 
 .nav-button {

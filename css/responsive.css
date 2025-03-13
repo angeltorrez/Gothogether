@@ -2,19 +2,32 @@
 #hamburger-menu {
   display: none;
   flex-direction: column;
+  width: 3rem;
+  height: 3rem;
+  border: 0;
+  background: transparent;
+  gap: .65rem;
   cursor: pointer;
+  justify-content: center; /* Centrar verticalmente */
+  align-items: center; /* Centrar horizontalmente */
+  z-index: 2;
 }
 
 #hamburger-menu span {
-  height: 3px;
-  width: 25px;
+  height: 2px;
+  width: 70%;
   background-color: #333;
-  margin: 4px 0;
-  transition: all 0.3s ease;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+  transform-origin: left;
+}
+
+#hamburger-menu.active span {
+  background-color: #fff;
 }
 
 #hamburger-menu.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg);
 }
 
 #hamburger-menu.active span:nth-child(2) {
@@ -22,25 +35,7 @@
 }
 
 #hamburger-menu.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-nav {
-  position: fixed;
-  top: 0;
-  right: -250px;
-  width: 250px;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-  transition: right 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  padding-top: 60px;
-}
-
-nav.active {
-  right: 0;
+  transform: rotate(-45deg);
 }
 
 nav ul {
@@ -83,33 +78,45 @@ nav ul li a.special-button {
 /* Estilos para móviles */
 @media (max-width: 600px) {
   body {
-    font-size: 14px;
+    font-size: 15px;
     width: 100%; /* Asegurarse de que el body ocupe todo el ancho */
+    margin: 0 auto; /* Centrar el contenido */
+    overflow-x: hidden; /* Evitar desbordamiento horizontal */
   }
 
   h1 {
     font-size: 24px;
+    text-align: center; /* Centrar el texto */
   }
 
   h2 {
     font-size: 20px;
+    text-align: center; /* Centrar el texto */
   }
 
   p {
     font-size: 16px;
+    text-align: left; /* Centrar el texto */
   }
 
   #header {
     text-align: center;
     display: grid;
     grid-template-areas:
-      "logo hamburger-menu";
+      "logo hamburger-menu"
+      "nav nav";
     grid-template-columns: 1fr auto;
     align-items: center;
     width: 100%; /* Asegurarse de que el header ocupe todo el ancho */
   }
-  #hamburger-menu{
+
+  #hamburger-menu {
     display: flex;
+  }
+
+  #hero {
+    min-height: 100vh;
+    place-content: start;
   }
 
   main {
@@ -127,10 +134,16 @@ nav ul li a.special-button {
       "separator4"
       "contact";
     grid-template-rows: auto auto auto auto auto auto auto auto auto;
+    justify-items: center; /* Centrar el contenido horizontalmente */
+    overflow: hidden; /* Evitar desbordamiento */
   }
 
   section {
     margin-bottom: 20px;
+    width: 100%; /* Asegurarse de que las secciones ocupen todo el ancho */
+    max-width: 600px; /* Limitar el ancho máximo */
+    padding: 10px; /* Añadir padding */
+    overflow: hidden; /* Evitar desbordamiento */
   }
 
   #separator1, #separator2, #separator3, #separator4 {
@@ -141,27 +154,65 @@ nav ul li a.special-button {
   }
 
   nav {
-    right: -250px;
+    grid-area: nav;
+    visibility: hidden;
+    opacity: 0;
+    height: 0px;
+    justify-self: end;
+    display: flex;
+    align-items: start;
+    background-color: #1c1c1c;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    transition: transform 0.5s ease, visibility 0s, opacity 0.5s ease;
+    transform: translateX(100%); /* Inicialmente fuera de la vista */
+    border-radius: 20px;
+    overflow: hidden; /* Evitar desbordamiento */
   }
 
   nav.active {
-    right: 0;
+    padding: 2rem;
+    height: 100vh;
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0); /* Desplazar a la vista */
+    transition: transform 0.5s ease, opacity 0.5s ease;
   }
 
   nav ul {
     flex-direction: column;
-    margin: 2rem 0px;
+    align-items: end;
+    gap: 1.5rem;
   }
 
   nav ul li a {
+    color: #fff;
     padding: 10px;
     text-align: center;
   }
 
-  .hero {
+  #how-works {
     display: flex;
     flex-direction: column;
-    place-content: center;
+    align-items: center;
+  }
+
+  .content-video-f {
+    height: 100vh;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+  }
+
+  .texts-info {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .vls-explain {
+    width: 100%;
+    height: auto;
   }
 }
 
@@ -169,18 +220,23 @@ nav ul li a.special-button {
 @media (min-width: 601px) and (max-width: 1024px) {
   body {
     font-size: 16px;
+    margin: 0 auto; /* Centrar el contenido */
+    overflow-x: hidden; /* Evitar desbordamiento horizontal */
   }
 
   h1 {
     font-size: 28px;
+    text-align: center; /* Centrar el texto */
   }
 
   h2 {
     font-size: 24px;
+    text-align: center; /* Centrar el texto */
   }
 
   p {
     font-size: 18px;
+    text-align: center; /* Centrar el texto */
   }
 
   #header {
@@ -206,10 +262,16 @@ nav ul li a.special-button {
       "separator4"
       "contact";
     grid-template-rows: auto auto auto auto auto auto auto auto auto;
+    justify-items: center; /* Centrar el contenido horizontalmente */
+    overflow: hidden; /* Evitar desbordamiento */
   }
 
   section {
     margin-bottom: 25px;
+    width: 100%; /* Asegurarse de que las secciones ocupen todo el ancho */
+    max-width: 800px; /* Limitar el ancho máximo */
+    padding: 10px; /* Añadir padding */
+    overflow: hidden; /* Evitar desbordamiento */
   }
 
   #separator1, #separator2, #separator3, #separator4 {
@@ -224,18 +286,23 @@ nav ul li a.special-button {
 @media (min-width: 1025px) {
   body {
     font-size: 18px;
+    margin: 0 auto; /* Centrar el contenido */
+    overflow-x: hidden; /* Evitar desbordamiento horizontal */
   }
 
   h1 {
     font-size: 32px;
+    text-align: center; /* Centrar el texto */
   }
 
   h2 {
     font-size: 28px;
+    text-align: center; /* Centrar el texto */
   }
 
   p {
     font-size: 20px;
+    text-align: center; /* Centrar el texto */
   }
 
   main {
@@ -253,11 +320,18 @@ nav ul li a.special-button {
       "separator4"
       "contact";
     grid-template-rows: 1fr auto 1fr auto 1fr auto 1fr auto 1fr;
+    justify-items: center; /* Centrar el contenido horizontalmente */
+    overflow: hidden; /* Evitar desbordamiento */
   }
 
   section {
     margin-bottom: 30px;
     height: 100vh;
+    width: 100%; /* Asegurarse de que las secciones ocupen todo el ancho */
+    max-width: 1200px; /* Limitar el ancho máximo */
+    padding: 10px; /* Añadir padding */
+    padding-top:80px;
+    overflow: hidden; /* Evitar desbordamiento */
   }
 
   #separator1, #separator2, #separator3, #separator4 {
@@ -265,5 +339,11 @@ nav ul li a.special-button {
     background-image: url("../public/separador.svg");
     height: 1rem;
     width: 100%;
+  }
+  #how-works{
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 5rem;
+
   }
 }

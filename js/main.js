@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const nav = document.querySelector('nav');
   const logo = document.getElementById('logo');
   const navLinks = document.querySelectorAll('nav ul li a');
+  const btnShow = document.querySelector('.btn-show');
 
   hamburgerMenu.addEventListener('click', () => {
     hamburgerMenu.classList.toggle('active');
@@ -22,5 +23,20 @@ document.addEventListener('DOMContentLoaded', () => {
       nav.classList.remove('active');
       hamburgerMenu.classList.remove('active');
     });
+  });
+
+  btnShow.addEventListener('click', (event) => {
+    event.preventDefault();
+    const targetId = btnShow.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
+    targetElement.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // Ocultar nav cuando se toca fuera de él
+  document.addEventListener('click', (event) => {
+    if (!nav.contains(event.target) && !hamburgerMenu.contains(event.target)) {
+      nav.classList.remove('active');
+      hamburgerMenu.classList.remove('active');
+    }
   });
 });
