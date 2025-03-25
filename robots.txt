@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /private/
+Disallow: /utils/
+
+# Permitir el acceso a todo lo demás
+Allow: /
+
+# Especificar el sitemap para los motores de búsqueda
+Sitemap: https://www.gotogether.com/sitemap.xml

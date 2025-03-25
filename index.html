@@ -2,22 +2,36 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta property="og:title" content="GoTogether - Asesorías estratégicas y legales">
+  <meta property="og:description" content="Asesorías estratégicas y legales con el respaldo de profesionales especializados.">
+  <meta property="og:image" content="./public/social-preview.jpg">
+  <meta property="og:url" content="https://www.gotogether.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GoTogether - Asesorías estratégicas y legales">
+  <meta name="twitter:description" content="Asesorías estratégicas y legales con el respaldo de profesionales especializados.">
+  <meta name="twitter:image" content="./public/social-preview.jpg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GoTogether - Asesorías estratégicas y legales con el respaldo de profesionales especializados.">
+  <meta name="author" content="GoTogether Team">
+  <meta name="keywords" content="asesorías, estrategias, legales, negocios, profesionales, consultoría">
   <title>GoTogether</title>
   <link icon="./public/icon.ico" rel="icon">
   <link rel="stylesheet" href="./css/main.css">
   <link rel="stylesheet" href="./css/responsive.css">
+  <link rel="stylesheet" href="css/play-pause-btn.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Importar Font Awesome -->
   <script src="./js/video-control.js" defer></script>
+  <script src="./js/carousel-services.js" defer></script> <!-- Importar el script del carrusel de servicios -->
+  <script src="./js/carrousel-videosPC.js" defer></script> <!-- Importar el script del carrusel de videos -->
 </head>
 <body>
   <header id="header">
     <div id="logo"><img src="./public/logo.svg" alt="logo de GoTogether" srcset=""></div>
-    <div id="hamburger-menu">
+    <button id="hamburger-menu" aria-controls="nav" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
-    </div>
+    </button>
     <nav id="nav">
       <ul>
         <li><a href="#how-works">¿Como Funciona?</a></li>
@@ -37,11 +51,16 @@
 
     <section id="how-works">
       <article class="content-video-f">
-          <div class="video-funciona">
-              <video src="./utils/video.mp4"></video>
-              <div class="overlay"></div>
-              <h2>¿Qué es una asesoría?</h2>
-              <i class="fa fa-play play-pause-btn"></i> <!-- Botón de play/pause -->
+        <div class="video-funciona">
+          <!-- From Uiverse.io by csemszepp --> 
+          <div class="play-pause-btn">
+            <label>
+              <input class="play-btn" type="checkbox">
+              <div class="play-icon"></div>
+              <div class="pause-icon"></div>
+            </label>
+          </div>
+          <video class="video-info" src="./utils/video.mp4"></video>
           </div>
       </article>
       <article class="texts-info">
@@ -157,11 +176,11 @@
       <article class="carrousel-container">
         <button class="nav-button prev">❮</button>
         <div class="carrousel-videos">
-          <div class="item-video"><video src="./utils/video.mp4"></video></div>
-          <div class="item-video"><video src="./utils/video.mp4"></video></div>
-          <div class="item-video"><video src="./utils/video.mp4"></video></div>
-          <div class="item-video"><video src="./utils/video.mp4"></video></div>
-          <div class="item-video"><video src="./utils/video.mp4"></video></div>
+          <div class="item-video"><video src="./utils/video.mp4" ></video></div>
+          <div class="item-video"><video src="./utils/video.mp4" ></video></div>
+          <div class="item-video"><video src="./utils/video.mp4" ></video></div>
+          <div class="item-video"><video src="./utils/video.mp4" ></video></div>
+          <div class="item-video"><video src="./utils/video.mp4" ></video></div>
         </div>
         <button class="nav-button next">❯</button>
       </article>
@@ -170,12 +189,10 @@
     </div>
 
     <section id="contact">
-      <h2>Section 5</h2>
-      <p>Content for section 5.</p>
+      <img src="" alt="">
     </section>
-  <footer>
-  </footer>
+ 
 </main>
-  <script src="./js/main.js"></script>
+<script src="./js/main.js"></script>
 </body>
 </html>

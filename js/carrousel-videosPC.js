@@ -62,4 +62,6 @@ videos.forEach(video => {
 nextButton.addEventListener("click", moveNext);
 prevButton.addEventListener("click", movePrev);
 
-updateCarousel();
+if (window.innerWidth > 1024) { // Verifica si es un PC (ancho mayor a 1024px)
+    updateCarousel();
+}

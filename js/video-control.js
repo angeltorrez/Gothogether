@@ -1,46 +1,47 @@
 document.addEventListener("DOMContentLoaded", function () {
   const videoContainer = document.querySelector(".video-funciona"); // Cambiar a how-work
-  const video = videoContainer.querySelector("video");
-  const playPauseBtn = videoContainer.querySelector(".play-pause-btn");
-  const title = videoContainer.querySelector("h2");
-  const overlay = videoContainer.querySelector(".overlay"); // Seleccionar el overlay
+  const video = videoContainer.querySelector(".video-info");
+  const playPauseBtn = videoContainer.querySelector(".play-btn");
+  const playPauseLabel = videoContainer.querySelector("label");
 
+  // Reproducir o pausar el video al hacer clic en el botón
   playPauseBtn.addEventListener("click", function () {
-      if (video.paused) {
-          video.play();
-          playPauseBtn.classList.remove("fa-play");
-          playPauseBtn.classList.add("fa-pause");
-          title.style.opacity = "0"; // Ocultar el título
-          overlay.style.opacity = "0"; // Ocultar el overlay
-      } else {
-          video.pause();
-          playPauseBtn.classList.remove("fa-pause");
-          playPauseBtn.classList.add("fa-play");
-          title.style.opacity = "1"; // Mostrar el título
-          overlay.style.opacity = "0.5"; // Volver a mostrar el overlay con transparencia
-      }
+    if (video.paused) {
+      video.play();
+      playPauseLabel.classList.add("hide"); // Ocultar el botón de play
+    } else {
+      video.pause();
+      playPauseLabel.classList.remove("hide"); // Mostrar el botón de play
+    }
   });
 
-  // Mostrar botón de pausa al pasar el mouse sobre el video
-  videoContainer.addEventListener("mouseenter", function () {
-      if (!video.paused) {
-          playPauseBtn.style.opacity = "1";
-      }
-  });
-
-  // Ocultar botón al salir del video
-  videoContainer.addEventListener("mouseleave", function () {
-      if (!video.paused) {
-          playPauseBtn.style.opacity = "0";
-      }
-  });
-
-  // Asegurar que el botón y overlay reaparecen cuando el video termina
+  // Mostrar el botón de play al finalizar el video
   video.addEventListener("ended", function () {
-      playPauseBtn.classList.remove("fa-pause");
-      playPauseBtn.classList.add("fa-play");
-      title.style.opacity = "1"; // Mostrar el título
-      overlay.style.opacity = "0.5"; // Restaurar overlay
-      playPauseBtn.style.opacity = "1"; // Asegurar que el botón de play sea visible
+    playPauseBtn.checked = false; // Restablecer el estado del checkbox
+    playPauseLabel.classList.remove("hide"); // Mostrar el botón de play
+  });
+
+  // Mostrar el botón de pausa solo al hacer hover en el video
+  videoContainer.addEventListener("mouseenter", function () {
+    if (!video.paused) {
+      playPauseLabel.classList.remove("hide"); // Mostrar el botón de pausa
+    }
+  });
+
+  videoContainer.addEventListener("mouseleave", function () {
+    if (!video.paused) {
+      playPauseLabel.classList.add("hide"); // Ocultar el botón de pausa
+    }
+  });
+
+  // Activar pantalla completa al hacer doble clic en el video
+  video.addEventListener("dblclick", function () {
+    if (video.requestFullscreen) {
+      video.requestFullscreen(); // Pantalla completa para navegadores modernos
+    } else if (video.webkitRequestFullscreen) {
+      video.webkitRequestFullscreen(); // Pantalla completa para Safari
+    } else if (video.msRequestFullscreen) {
+      video.msRequestFullscreen(); // Pantalla completa para IE/Edge
+    }
   });
 });
